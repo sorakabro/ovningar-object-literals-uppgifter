@@ -81,8 +81,9 @@ let alex = {
 let peter = {
     name: "Peter",
     subjects: [],
-    addSubject: function (subject){
+    addSubjectToTeacher: function (subject){
         this.subjects.push(subject);
+        svenska.teacher = this;
         return this;
     }
 }
