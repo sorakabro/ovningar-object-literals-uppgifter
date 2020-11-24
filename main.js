@@ -8,7 +8,11 @@ let medieinstitutet = {
     teachers: [],
     address: "Malmö vägen 123",
     zipCode: "123321",
-    city: "Malmö"
+    city: "Malmö",
+    fireTeacher: function (quit){
+        this.teachers = this.teachers.filter(q => q !== quit);
+        return this;
+    }
 }
 
 
@@ -20,6 +24,11 @@ let matematik = {
     teacher: [],
     addTeacher: function (teacher){
         this.teacher.push(teacher);
+        peter.subjects = this;
+        return this;
+    },
+    removeTeacher: function (quit){
+        this.teacher = this.teacher.filter(q => q !== quit);
         return this;
     }
 }
@@ -28,7 +37,15 @@ let matematik = {
 let svenska = {
     name: "Svenska",
     students: [],
-    teacher: []
+    teacher: [],
+    addStudent: function(student){
+        this.students.push(student);
+        return this;
+    },
+    relegateStudent: function (remove){
+        this.students = this.students.filter(r => r !== remove);
+        return this;
+    }
 }
 
 
@@ -70,6 +87,10 @@ let kalle = {
     addSubject: function (subject){
         this.subjects.push(subject);
         return this;
+    },
+    quitSubject: function(quit){
+        this.subjects = this.subjects.filter(p => p !== quit);
+        return this;
     }
 
 }
@@ -100,6 +121,7 @@ let peter = {
     subjects: [],
     addSubjectToTeacher: function (subject){
         this.subjects.push(subject);
+        medieinstitutet.teachers = this;
         svenska.teacher = this;
         return this;
     }
@@ -110,4 +132,3 @@ let niklas = {
     subjects: []
 
 }
-console.log(peter);
