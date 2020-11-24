@@ -69,15 +69,22 @@ let alex = {
     name: "Alex",
     age: 48,
     gender: "Male",
-    subjects: []
+    subjects: [],
+    addSubject: function (subject){
+        this.subjects.push(subject);
+        return this;
+    }
 }
 
 // Skapa två lärare, egenskaper name och subjects
 
 let peter = {
     name: "Peter",
-    subjects: []
-
+    subjects: [],
+    addSubject: function (subject){
+        this.subjects.push(subject);
+        return this;
+    }
 }
 
 let niklas = {
@@ -85,4 +92,4 @@ let niklas = {
     subjects: []
 
 }
-console.log(peter, niklas);
+console.log(peter);
