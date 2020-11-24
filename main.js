@@ -17,7 +17,11 @@ let medieinstitutet = {
 let matematik = {
     name: "Matematik",
     students: [],
-    teacher: []
+    teacher: [],
+    addTeacher: function (teacher){
+        this.teacher.push(teacher);
+        return this;
+    }
 }
 
 
@@ -31,7 +35,11 @@ let svenska = {
 let engelska = {
     name: "Engelska",
     students: [],
-    teacher: []
+    teacher: [],
+    addStudent: function(student){
+        this.students.push(student);
+        return this;
+    }
 }
 
 // Skapa fem stycken studenter, egenskaper name, age,gender och subjects
@@ -40,7 +48,11 @@ let olle = {
     name: "Olle",
     age: 32,
     gender: "Male",
-    subjects: []
+    subjects: [],
+    enlistToSubject: function(subject) {
+        this.subjects.push(subject);
+        return this;
+    }
 }
 
 let karin = {
@@ -54,7 +66,12 @@ let kalle = {
     name: "Kalle",
     age: 25,
     gender: "Male",
-    subjects: []
+    subjects: [],
+    addSubject: function (subject){
+        this.subjects.push(subject);
+        return this;
+    }
+
 }
 
 
